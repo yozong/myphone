@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=640,user-scalable=no,target-densityDpi=device-dpi" />
+<title>测试</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animation.css" />
+<script src="js/lex.js" ></script>
+
+</head>
+<body>
+<script>
+	document.body.style.height=view().h+'px';
+</script>
+
+<section class="bgColor sectionIn">
+	<h6>I need you<br/>
+		and you also need me...</h6>
+	<div class="door"></div>
+	<div class="person"></div>
+</section>
+	
+<div class="music musicrun" id="musicbg">
+	<audio src="bg.mp3" autoplay="true" preload="auto"></audio>
+</div>
+
+<div <div style="position:absolute; left:100px; top:100px; width:240px; height:36px; z-index:1; ">
+
+
+<script>
+
+	musicShow();	
+	function musicShow(){
+		var au=s('musicbg').getElementsByTagName('audio')[0];
+		
+		bind(s('musicbg'),'touchstart',function(){
+			if(au.paused){
+				au.play();
+				removeClass(s('musicbg'),'musicStop');
+				addClass(s('musicbg'),'musicrun');
+			}else{
+				au.pause();
+				removeClass(s('musicbg'),'musicrun');
+				addClass(s('musicbg'),'musicStop');
+			}
+		});
+	}
+
+</script>
+
+
+</body>
+</html>
